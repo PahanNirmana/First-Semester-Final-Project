@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="727.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.metleCrusher.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="727.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/loginPage.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="981.0" layoutY="98.0" text="Login" textFill="#6c9df8">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="878.0" layoutY="251.0" opacity="0.91" prefHeight="32.0" prefWidth="314.0" promptText="Username" style="-fx-background-radius: 50;">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.24671052396297455" green="0.4194079041481018" blue="0.9868420958518982" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </TextField>
+      <JFXButton fx:id="login" buttonType="RAISED" contentDisplay="CENTER" layoutX="963.0" layoutY="438.0" onAction="#UserLoginOnAction" prefHeight="46.0" prefWidth="111.0" style="-fx-background-radius: 50; -fx-background-color: #6c5ce7;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow height="29.79" radius="18.7925" spread="0.17" width="47.38">
+               <color>
+                  <Color red="0.1527777761220932" green="0.2362694889307022" blue="0.8684210777282715" />
+               </color>
+            </DropShadow>
+         </effect>
+      </JFXButton>
+      <Label layoutX="897.0" layoutY="217.0" text="Usename" textFill="#f2eeee">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="899.0" layoutY="292.0" text="Password" textFill="#f2eeee">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="937.0" layoutY="366.0" prefHeight="20.0" prefWidth="122.0" text="Forgot Password" textFill="#7839e4">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <PasswordField fx:id="password" layoutX="877.0" layoutY="327.0" opacity="0.94" prefHeight="32.0" prefWidth="314.0" promptText="Password" style="-fx-background-radius: 40;">
+         <font>
+            <Font name="Rockwell Bold Italic" size="12.0" />
+         </font>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.1666666716337204" green="0.25" blue="1.0" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </PasswordField>
+      <Label fx:id="wrongLogin" layoutX="1056.0" layoutY="227.0" textFill="#ff2828">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

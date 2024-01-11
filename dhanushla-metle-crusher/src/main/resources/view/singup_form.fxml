@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.metleCrusher.controller.SingUpFormController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1288.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/singUp1280.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtFirstName" layoutX="839.0" layoutY="203.0" prefHeight="25.0" prefWidth="146.0" promptText="First Name" style="-fx-background-radius: 20;" />
+      <TextField fx:id="txtEmail" layoutX="838.0" layoutY="316.0" prefHeight="25.0" prefWidth="317.0" promptText="E-mail" style="-fx-background-radius: 20;" />
+      <TextField fx:id="txtUsername" layoutX="838.0" layoutY="259.0" prefHeight="25.0" prefWidth="317.0" promptText="Usename@123" style="-fx-background-radius: 20;" />
+      <TextField fx:id="txtPassword" layoutX="840.0" layoutY="379.0" prefHeight="25.0" prefWidth="317.0" promptText="Password" style="-fx-background-radius: 20;" />
+      <JFXButton fx:id="register" buttonType="RAISED" layoutX="944.0" layoutY="486.0" onAction="#btnAllReadySingUpOnAction" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 50;" text="Sing Up" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <CheckBox layoutX="870.0" layoutY="410.0" mnemonicParsing="false" text="I accept  the  terms of Use &amp; Privacy Policy" />
+      <TextField fx:id="txtLastName" layoutX="997.0" layoutY="201.0" prefHeight="25.0" prefWidth="156.0" promptText="Last Name" style="-fx-background-radius: 20;" />
+      <Label layoutX="908.0" layoutY="524.0" text="Already have an account?" />
+      <Label layoutX="1048.0" layoutY="524.0" text="Login here" textFill="#5686e8" />
+      <Label layoutX="856.0" layoutY="181.0" text="First Name">
+         <font>
+            <Font name="Rockwell Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1015.0" layoutY="178.0" text="Last Name">
+         <font>
+            <Font name="Rockwell Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="856.0" layoutY="240.0" text="Username">
+         <font>
+            <Font name="Rockwell Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="859.0" layoutY="297.0" text="E-mail">
+         <font>
+            <Font name="Rockwell Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="856.0" layoutY="359.0" text="Password">
+         <font>
+            <Font name="Rockwell Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

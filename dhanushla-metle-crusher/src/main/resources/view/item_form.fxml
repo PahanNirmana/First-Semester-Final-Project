@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.metleCrusher.controller.ItemFormController">
+    <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/customerBack.jpg" />
+         </image>
+      </ImageView>
+        <TextField fx:id="txtCode" layoutX="304.0" layoutY="290.0" onAction="#codeSearchOnAction" opacity="0.72" prefHeight="29.0" prefWidth="356.0" promptText="Item Code" style="-fx-background-radius: 20;" />
+        <Label layoutX="308.0" layoutY="261.0" text="Item Code*" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+        <Label layoutX="306.0" layoutY="331.0" text="Description*" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+        <TextField fx:id="txtDescription" layoutX="304.0" layoutY="357.0" opacity="0.72" prefHeight="26.0" prefWidth="360.0" promptText="Description" style="-fx-background-radius: 20;" />
+        <Label layoutX="305.0" layoutY="397.0" text="Unit Price*" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+        <TextField fx:id="txtUnitPrice" layoutX="302.0" layoutY="423.0" opacity="0.72" prefHeight="29.0" prefWidth="359.0" promptText="Unit Price" style="-fx-background-radius: 20;" />
+        <Label layoutX="301.0" layoutY="467.0" text="Qty On Hand*" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+        <TextField fx:id="txtQtyOnHand" layoutX="300.0" layoutY="491.0" opacity="0.72" prefHeight="29.0" prefWidth="361.0" promptText="Qty On Hand" style="-fx-background-radius: 20;" />
+        <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="573.0" layoutY="547.0" onAction="#btnSaveOnAction" prefHeight="33.0" prefWidth="87.0" style="-fx-background-color: #D980FA; -fx-background-radius: 40;" text="Save">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/save.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="357.0" layoutY="652.0" onAction="#btnUpdateOnAction" prefHeight="29.0" prefWidth="85.0" style="-fx-background-color: #55efc4; -fx-background-radius: 40;" text="Update">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/update.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="282.0" layoutY="651.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #e17055; -fx-background-radius: 40;" text="Clear">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/clear.png" />
+               </image>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+        </JFXButton>
+        <TableView fx:id="tblItem" layoutX="682.0" layoutY="208.0" opacity="0.72" prefHeight="485.0" prefWidth="568.0" style="-fx-background-radius: 20; -fx-background-color: #808e9b;">
+            <columns>
+                <TableColumn fx:id="colCode" prefWidth="75.0" text="Code" />
+                <TableColumn fx:id="colDescription" prefWidth="229.0" text="Description" />
+                <TableColumn fx:id="colUnitPrice" prefWidth="85.0" text="Unit Price" />
+                <TableColumn fx:id="colQtyOnHand" prefWidth="105.0" text="Qty On Hand" />
+                <TableColumn fx:id="colAction" prefWidth="73.0" text="Action" />
+            </columns>
+         <effect>
+            <InnerShadow choke="0.17">
+               <color>
+                  <Color red="0.1556408405303955" green="0.3434474468231201" blue="0.9605262875556946" />
+               </color>
+            </InnerShadow>
+         </effect>
+        </TableView>
+        <JFXButton buttonType="RAISED" layoutX="250.0" layoutY="38.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="61.0" style="-fx-background-color: grey; -fx-background-radius: 40;" text="Back" textFill="WHITE">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+        </JFXButton>
+      <VBox layoutX="1.0" layoutY="4.0" opacity="0.78" prefHeight="715.0" prefWidth="224.0" style="-fx-background-color: #636e72; -fx-background-radius: 40;">
+         <children>
+            <AnchorPane prefHeight="170.0" prefWidth="243.0">
+               <children>
+                  <ImageView fitHeight="170.0" fitWidth="243.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/backCusLogo.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="135.0" prefWidth="232.0">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="39.0" layoutY="-10.0" onAction="#btnItemEkeIdanCustomerEkata" prefHeight="155.0" prefWidth="148.0" text="Customer" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="82.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/customernew.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children></AnchorPane>
+            <AnchorPane prefHeight="125.0" prefWidth="232.0">
+               <children>
+                  <ImageView fitHeight="79.0" fitWidth="96.0" layoutX="65.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/Itemnew.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="95.0" layoutY="92.0" prefHeight="26.0" prefWidth="39.0" text="Item" textFill="WHITE">
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="106.0" prefWidth="232.0">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="63.0" layoutY="-1.0" onAction="#btnItemEkeIdanPlaceOrderEkata" text="Place Order" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/place_order.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="127.0" prefWidth="232.0">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="62.0" layoutY="10.0" onAction="#btnItemiIdanEmployee" text="Employee" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="84.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/Employee.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="234.0" layoutY="92.0" opacity="0.78" prefHeight="91.0" prefWidth="1044.0" style="-fx-background-color: #636e72; -fx-background-radius: 50;">
+         <children>
+              <Label layoutX="478.0" layoutY="12.0" text="Item" textFill="#ffe9e9">
+                  <font>
+                      <Font name="Rockwell Bold" size="36.0" />
+                  </font>
+               <effect>
+                  <DropShadow height="119.19" radius="57.995000000000005" spread="0.34" width="114.79" />
+               </effect>
+              </Label>
+         </children>
+      </AnchorPane>
+      <MenuBar layoutX="233.0" layoutY="3.0" opacity="0.61" prefHeight="25.0" prefWidth="1046.0" style="-fx-background-radius: 30;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Line endX="322.0" endY="465.5" layoutX="-90.0" layoutY="221.0" startX="322.0" startY="-212.5" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="822.0" layoutX="384.0" layoutY="193.0" startX="-94.0" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="956.0" layoutX="314.0" layoutY="707.0" startX="-94.0" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="322.0" endY="474.0" layoutX="949.0" layoutY="229.0" startX="322.0" startY="-200.0" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <CubicCurve controlX1="-35.5" controlX2="6.0" controlY1="-45.0" controlY2="48.0" endX="34.0" fill="DODGERBLUE" layoutX="790.0" layoutY="147.0" startX="-111.0" stroke="BLACK">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </CubicCurve>
+      <AnchorPane layoutX="1066.0" layoutY="60.0" prefHeight="31.0" prefWidth="173.0">
+         <children>
+            <Label fx:id="lblItemDate" layoutX="22.0" layoutY="2.0" textFill="WHITE">
+               <font>
+                  <Font name="Rockwell Bold Italic" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow height="37.11" radius="18.4225" spread="0.11" width="38.58">
+                     <color>
+                        <Color red="0.3137255012989044" green="0.3960784375667572" blue="0.9215686321258545" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton layoutX="446.0" layoutY="652.0" onAction="#btnDeleteOnAction" prefHeight="29.0" prefWidth="79.0" style="-fx-background-color: #e17055; -fx-background-radius: 20;" text="Delete">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </JFXButton>
+    </children>
+</AnchorPane>

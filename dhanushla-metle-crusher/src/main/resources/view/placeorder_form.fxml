@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.metleCrusher.controller.PlaceOrderFormController">
+    <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/customerBack.jpg" />
+         </image>
+      </ImageView>
+      <Line endX="854.0" layoutX="384.0" layoutY="185.0" startX="-94.0" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect></Line>
+      <AnchorPane layoutX="258.0" layoutY="182.0" opacity="0.25" prefHeight="243.0" prefWidth="1008.0" style="-fx-background-color: #95a5a6; -fx-background-radius: 40;">
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </AnchorPane>
+        <Label layoutX="313.0" layoutY="200.0" text="Order Id:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblOrderId" layoutX="396.0" layoutY="197.0" textFill="#eff4fc">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.019607843831181526" green="0.4941176474094391" blue="0.9725490212440491" />
+               </color>
+            </DropShadow>
+         </effect>
+        </Label>
+        <Label layoutX="977.0" layoutY="189.0" text="Order date:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblOrderDate" layoutX="1088.0" layoutY="187.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.019607843831181526" green="0.4941176474094391" blue="0.9725490212440491" />
+               </color>
+            </DropShadow>
+         </effect>
+        </Label>
+        <Label layoutX="312.0" layoutY="253.0" text="Customer Id:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <JFXComboBox fx:id="cmbCustomerId" focusColor="#acc1ff" layoutX="422.0" layoutY="250.0" onAction="#cmbCustomerOnAction" opacity="0.62" prefHeight="33.0" prefWidth="203.0" style="-fx-background-color: #81ecec; -fx-background-radius: 20;" unFocusColor="#61b8dd">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+        <Label layoutX="973.0" layoutY="240.0" text="Customer Name:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblCustomerName" layoutX="1111.0" layoutY="238.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.019607843831181526" green="0.4941176474094391" blue="0.9725490212440491" />
+               </color>
+            </DropShadow>
+         </effect>
+        </Label>
+        <Label layoutX="312.0" layoutY="309.0" text="Code:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <JFXComboBox fx:id="cmbItemCode" focusColor="#bbccff" layoutX="313.0" layoutY="342.0" onAction="#cmbItemOnAction" opacity="0.65" prefHeight="33.0" prefWidth="183.0" style="-fx-background-color: #81ecec; -fx-background-radius: 20;" unFocusColor="#a0d0f2">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+        <Label layoutX="572.0" layoutY="311.0" text="Description:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblDescription" layoutX="569.0" layoutY="350.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.019607843831181526" green="0.4941176474094391" blue="0.9725490212440491" />
+               </color>
+            </DropShadow>
+         </effect>
+        </Label>
+        <Label layoutX="762.0" layoutY="310.0" text="Unit Price:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblUnitPrice" layoutX="776.0" layoutY="351.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.019607843831181526" green="0.4941176474094391" blue="0.9725490212440491" />
+               </color>
+            </DropShadow>
+         </effect>
+        </Label>
+        <Label layoutX="977.0" layoutY="299.0" text="Qty. On Hand:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblQtyOnHand" layoutX="1021.0" layoutY="339.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.019607843831181526" green="0.4941176474094391" blue="0.9725490212440491" />
+               </color>
+            </DropShadow>
+         </effect>
+        </Label>
+        <Label layoutX="1184.0" layoutY="301.0" text="Qty:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtQty" layoutX="1167.0" layoutY="335.0" onAction="#txtQtyOnAction" opacity="0.74" prefHeight="33.0" prefWidth="66.0" style="-fx-background-radius: 40;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+        <TableView fx:id="tblOrderCart" layoutX="263.0" layoutY="430.0" opacity="0.92" prefHeight="278.0" prefWidth="818.0" style="-fx-background-radius: 20; -fx-background-color: #808e9b;">
+            <columns>
+                <TableColumn fx:id="colItemCode" prefWidth="111.0" text="Code" />
+                <TableColumn fx:id="colDescription" prefWidth="330.0" text="Description" />
+                <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="77.0" text="Qty" />
+                <TableColumn fx:id="colUnitPrice" prefWidth="109.0" text="Unit Price" />
+                <TableColumn fx:id="colTotal" prefWidth="109.0" text="Total" />
+                <TableColumn fx:id="colAction" prefWidth="75.0" text="Action" />
+            </columns>
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color red="0.26815301179885864" green="0.3569606840610504" blue="0.9342105388641357" />
+               </color>
+            </InnerShadow>
+         </effect>
+        </TableView>
+        <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="1138.0" layoutY="388.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #3498db;" text="Add to cart" textFill="WHITE">
+            <graphic>
+                <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../icon/cart.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="1089.0" layoutY="633.0" onAction="#btnPlaceOrderOnAction" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: #ffa502;" text="Place Order" textFill="WHITE">
+            <graphic>
+                <ImageView fitHeight="28.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../icon/make_order.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="648.0" layoutY="250.0" onAction="#btnNewCustomerOnAction" prefHeight="21.0" prefWidth="74.0" style="-fx-background-color: #2ecc71;" text="NEW" textFill="WHITE">
+            <graphic>
+                <ImageView fitHeight="17.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../icon/new.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="237.0" layoutY="35.0" onAction="#btnBackOnAction" opacity="0.8" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 50;" text="Back">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+        </JFXButton>
+        <Label fx:id="lblNetTotal" layoutX="1166.0" layoutY="603.0" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.019607843831181526" green="0.4941176474094391" blue="0.9725490212440491" />
+               </color>
+            </DropShadow>
+         </effect>
+        </Label>
+        <Label layoutX="1090.0" layoutY="608.0" text="Net Total:" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <VBox layoutY="5.0" opacity="0.78" prefHeight="715.0" prefWidth="224.0" style="-fx-background-color: #636e72; -fx-background-radius: 40;">
+         <children>
+            <AnchorPane prefHeight="170.0" prefWidth="243.0">
+               <children>
+                  <ImageView fitHeight="170.0" fitWidth="243.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/backCusLogo.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="125.0" prefWidth="232.0">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="61.0" layoutY="2.0" onAction="#btnPlaceOrderBackOnCustomer" text="Customer" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="87.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/customernew.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="125.0" prefWidth="232.0">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="62.0" layoutY="11.0" onAction="#btnPlaceOrderBackOnItem" text="Item" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="79.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/Itemnew.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="125.0" prefWidth="232.0">
+               <children>
+                  <ImageView fitHeight="116.0" fitWidth="74.0" layoutX="73.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/place_order.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="69.0" layoutY="83.0" text="Place Order" textFill="WHITE">
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="125.0" prefWidth="232.0">
+               <children>
+                  <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="61.0" layoutY="7.0" onAction="#btnPlaceOrderIdanEmployee" text="Employee" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/Employee.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Rockwell Bold Italic" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="232.0" layoutY="74.0" opacity="0.78" prefHeight="95.0" prefWidth="1046.0" style="-fx-background-color: #636e72; -fx-background-radius: 50;">
+         <children>
+              <Label layoutX="416.0" layoutY="19.0" prefHeight="46.0" prefWidth="231.0" text="Place Order" textFill="#ffe9e9">
+                  <font>
+                      <Font name="Rockwell Bold" size="36.0" />
+                  </font>
+               <effect>
+                  <DropShadow height="122.12" radius="55.065" spread="0.43" width="100.14" />
+               </effect>
+              </Label>
+         </children>
+      </AnchorPane>
+      <MenuBar layoutX="232.0" layoutY="2.0" opacity="0.72" prefHeight="25.0" prefWidth="1046.0" style="-fx-background-radius: 30;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Line endX="461.0" layoutX="811.0" layoutY="711.0" startX="-594.0" stroke="#1626ff">
+         <effect>
+            <DropShadow height="56.17" radius="15.8625" spread="0.19" width="9.28">
+               <color>
+                  <Color red="0.21569809317588806" green="0.20285087823867798" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="854.0" layoutX="385.0" layoutY="423.0" startX="-86.0" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="322.0" endY="465.5" layoutX="-91.0" layoutY="220.0" startX="322.0" startY="-212.5" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="322.0" endY="474.5" layoutX="951.0" layoutY="232.0" startX="322.0" startY="-207.0" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="862.0" endY="178.5" layoutX="395.0" layoutY="198.0" startX="862.0" startY="15.5" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="43.0" endY="186.5" layoutX="223.0" layoutY="201.0" startX="43.0" startY="7.5" stroke="#002fff">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="25.0" endY="186.5" layoutX="522.0" layoutY="191.0" startX="174.0" startY="186.5" stroke="#fafbfc">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="25.0" endY="186.5" layoutX="719.0" layoutY="191.0" startX="144.0" startY="186.5" stroke="#fafbfc">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="53.0" endY="186.5" layoutX="929.0" layoutY="178.0" startX="144.0" startY="186.5" stroke="#fafbfc">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="53.0" endY="186.5" layoutX="1041.0" layoutY="74.0" startX="194.0" startY="186.5" stroke="#fafbfc">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="53.0" endY="186.5" layoutX="1008.0" layoutY="25.0" startX="194.0" startY="186.5" stroke="WHITE">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="25.0" endY="186.5" layoutX="349.0" layoutY="34.0" startX="144.0" startY="186.5" stroke="#fafbfc">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="25.0" endY="186.5" layoutX="398.0" layoutY="98.0" startX="220.0" startY="186.5" stroke="#fafbfc">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <Line endX="35.0" endY="186.5" layoutX="280.0" layoutY="190.0" startX="220.0" startY="186.5" stroke="#fafbfc">
+         <effect>
+            <DropShadow height="18.07" radius="7.8025" spread="0.71" width="15.14">
+               <color>
+                  <Color red="0.29548612236976624" green="0.2839912176132202" blue="0.9736841917037964" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Line>
+      <CubicCurve controlX1="-79.0" controlX2="6.0" controlY1="-61.5" controlY2="50.5" endX="82.0" fill="DODGERBLUE" layoutX="785.0" layoutY="145.0" startX="-150.0" stroke="BLACK">
+         <effect>
+            <InnerShadow />
+         </effect>
+      </CubicCurve>
+      <AnchorPane layoutX="1046.0" layoutY="39.0" prefHeight="32.0" prefWidth="183.0">
+         <children>
+            <Label fx:id="lblOrderDate1" layoutX="39.0" layoutY="5.0" textFill="WHITE">
+               <font>
+                  <Font name="Rockwell Bold Italic" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.3137255012989044" green="0.3960784375667572" blue="0.9215686321258545" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="1092.0" layoutY="674.0" onAction="#btnJasperOnAction" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #3498db;" text="Print Order" textFill="WHITE" />
+    </children>
+</AnchorPane>
