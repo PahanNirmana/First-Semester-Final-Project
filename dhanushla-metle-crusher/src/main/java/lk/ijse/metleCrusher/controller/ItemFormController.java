@@ -142,10 +142,9 @@ public class ItemFormController {
 
             ArrayList<ItemDto> getAllItems=itemBO.getAllItems();
             for (ItemDto dto:getAllItems) {
-                System.out.println(dto);
-                obList.add(new ItemTm(dto.getCode(), dto.getDescription(), dto.getUnitPrice(), dto.getQtyOnHand()));
+                tblItem.getItems().add(new ItemTm(dto.getCode(), dto.getDescription(), dto.getUnitPrice(), dto.getQtyOnHand(), new Button()));
             }
-            tblItem.setItems(obList);
+
 
 
 //            List<ItemDto> dtoList = itemModel.loadAllItems();

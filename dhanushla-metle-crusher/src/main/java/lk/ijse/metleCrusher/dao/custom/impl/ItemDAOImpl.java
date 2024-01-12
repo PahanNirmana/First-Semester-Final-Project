@@ -17,11 +17,10 @@ public class ItemDAOImpl implements ItemDAO {
     public ArrayList<ItemDto> getAll() throws SQLException, ClassNotFoundException {
         Connection connection = DbConnection.getInstance().getConnection();
         Statement stm = connection.createStatement();
-        ResultSet rst = stm.executeQuery("SELECT * FROM Item");
+        ResultSet rst = stm.executeQuery("SELECT * FROM item");
         ArrayList<ItemDto> getAllItem=new ArrayList<>();
         while (rst.next()) {
-            ItemDto itemDTO=new ItemDto(rst.getString(1),rst.getString(2),rst.getDouble(3),rst.getInt(4));
-            getAllItem.add(itemDTO);
+            getAllItem.add(new ItemDto(rst.getString(1),rst.getString(2),rst.getDouble(3),rst.getInt(4)));
         }
         return getAllItem;
     }
@@ -42,6 +41,6 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public boolean delete(String dto) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("DELETE FROM item WHERE code = ?");
+        return SQLUtil.execute("DELETE FROM item WHERE code = ?", dto);
     }
 }

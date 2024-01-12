@@ -33,22 +33,6 @@ public class CustomerModel {
         return dto;
     }
 
-//    public boolean saveCustomer(CustomerDto dto) throws SQLException {
-//        Connection connection = DbConnection.getInstance().getConnection();
-//
-//       String sql = "INSERT INTO customer VALUES(?, ?, ?, ?)";
-//       PreparedStatement pstm = connection.prepareStatement(sql);
-//
-//        pstm.setString(1, dto.getId());
-//        pstm.setString(2, dto.getName());
-//        pstm.setString(3, dto.getAddress());
-//        pstm.setString(4, dto.getTel());
-//
-//        boolean isSaved = pstm.executeUpdate() > 0;
-//
-//        return isSaved;
-//    }
-
     public List<CustomerDto> getAllCustomer() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -71,38 +55,4 @@ public class CustomerModel {
         return dtoList;
     }
 
-//    public boolean deleteCustomer(String id) throws SQLException {
-//        Connection connection = DbConnection.getInstance().getConnection();
-//
-//        String sql = "DELETE FROM customer WHERE id = ?";
-//        PreparedStatement pstm = connection.prepareStatement(sql);
-//
-//        pstm.setString(1, id);
-//
-//        return pstm.executeUpdate() > 0;
-//    }
-
-//    public boolean updateCustomer(CustomerDto dto) throws SQLException {
-//        Connection connection = DbConnection.getInstance().getConnection();
-//
-//        String sql = "UPDATE customer SET name = ?, address = ?, tel = ? WHERE id = ?";
-//        PreparedStatement pstm = connection.prepareStatement(sql);
-//        pstm.setString(1, dto.getName());
-//        pstm.setString(2, dto.getAddress());
-//        pstm.setString(3, dto.getTel());
-//        pstm.setString(4, dto.getId());
-//
-//        return pstm.executeUpdate() > 0;
-//    }
-
-//    public boolean deleteItem(String id) throws SQLException {
-//        Connection connection = DbConnection.getInstance().getConnection();
-//
-//        String sql = "DELETE FROM item WHERE id = ?";
-//        PreparedStatement pstm = connection.prepareStatement(sql);
-//
-//        pstm.setString(1, id);
-//
-//        return pstm.executeUpdate() > 0;
-//    }
 }

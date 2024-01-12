@@ -6,7 +6,7 @@ public class CustomerDto {
     private String address;
     private String tel;
 
-    public CustomerDto() {
+    public CustomerDto(String s, String name, String address) {
     }
 
     public CustomerDto(String id, String name, String address, String tel) {
