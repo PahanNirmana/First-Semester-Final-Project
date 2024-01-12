@@ -9,19 +9,6 @@ public class OrderDTO  {
     private String orderId;
     private LocalDate orderDate;
     private String customerId;
-    private String customerName;
-    private BigDecimal orderTotal;
-
-    public OrderDTO(String orderId, LocalDate orderDate, String customerId) {
-    }
-
-    public OrderDTO(String orderId, LocalDate orderDate, String customerId, String customerName, BigDecimal orderTotal) {
-        this.orderId = orderId;
-        this.orderDate = orderDate;
-        this.customerId = customerId;
-        this.customerName = customerName;
-        this.orderTotal = orderTotal;
-    }
 
     public String getOrderId() {
         return orderId;
@@ -47,30 +34,9 @@ public class OrderDTO  {
         this.customerId = customerId;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public BigDecimal getOrderTotal() {
-        return orderTotal;
-    }
-
-    public void setOrderTotal(BigDecimal orderTotal) {
-        this.orderTotal = orderTotal;
-    }
-
-    @Override
-    public String toString() {
-        return "OrderDTO{" +
-                "orderId='" + orderId + '\'' +
-                ", orderDate=" + orderDate +
-                ", customerId='" + customerId + '\'' +
-                ", customerName='" + customerName + '\'' +
-                ", orderTotal=" + orderTotal +
-                '}';
+    public OrderDTO(String orderId, LocalDate orderDate, String customerId) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+        this.customerId = customerId;
     }
 }

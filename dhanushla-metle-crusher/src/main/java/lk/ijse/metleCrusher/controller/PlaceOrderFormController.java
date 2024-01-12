@@ -100,6 +100,8 @@ public class PlaceOrderFormController {
     private CustomerModel customerModel = new CustomerModel();
     private ItemModel itemModel = new ItemModel();
     private OrderModel orderModel = new OrderModel();
+
+    private PlaceOrderItemModel placeOrderItemModel = new PlaceOrderItemModel();
     private ObservableList<CartTm> obList = FXCollections.observableArrayList();
 
     public void initialize() {
@@ -200,6 +202,7 @@ public class PlaceOrderFormController {
         tblOrderCart.setItems(obList);
         calculateTotal();
         txtQty.clear();
+
     }
 
     private void setRemoveBtnAction(Button btn,CartTm cartTm) {
@@ -210,7 +213,7 @@ public class PlaceOrderFormController {
             Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
 
             if (type.orElse(no) == yes) {
-               // int focusedIndex = tblOrderCart.getSelectionModel().getSelectedIndex();
+                // int focusedIndex = tblOrderCart.getSelectionModel().getSelectedIndex();
 
                 obList.remove(cartTm);
                 tblOrderCart.refresh();
@@ -298,9 +301,10 @@ public class PlaceOrderFormController {
         System.out.println("Place order form controller: " + cartTmList);
         PlaceOrderDto placeOrderDto = new PlaceOrderDto(orderId, date, customerId, cartTmList);
         try {
-            boolean isSuccess = PlaceOrderItemModel.placeOrder(placeOrderDto);
+            boolean isSuccess = placeOrderItemModel.placeOrder(placeOrderDto);
             if (isSuccess) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Order Success!").show();
+                initialize();
             }
 
         } catch (SQLException e) {

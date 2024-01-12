@@ -110,6 +110,7 @@ public class ItemFormController {
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "item saved!").show();
                     clearFields();
+                    initialize();
                 }
 
             } catch (SQLException e) {
@@ -136,12 +137,15 @@ public class ItemFormController {
     private void loadAllItems() {
 //        var model = new ItemModel();
         ObservableList<ItemTm> obList = FXCollections.observableArrayList();
+
         try {
 
             ArrayList<ItemDto> getAllItems=itemBO.getAllItems();
             for (ItemDto dto:getAllItems) {
-                tblItem.getItems().add(new ItemTm(dto.getCode(), dto.getDescription(), dto.getUnitPrice(), dto.getQtyOnHand()));
+                System.out.println(dto);
+                obList.add(new ItemTm(dto.getCode(), dto.getDescription(), dto.getUnitPrice(), dto.getQtyOnHand()));
             }
+            tblItem.setItems(obList);
 
 
 //            List<ItemDto> dtoList = itemModel.loadAllItems();
