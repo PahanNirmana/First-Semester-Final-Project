@@ -8,6 +8,7 @@ public interface CrudDAO<T> extends SuperDAO {
     boolean save(T dto) throws SQLException, ClassNotFoundException;
     boolean update(T dto) throws SQLException, ClassNotFoundException;
     boolean delete(String dto) throws SQLException, ClassNotFoundException;
+    public T search(String id) throws SQLException, ClassNotFoundException;
 
 
 

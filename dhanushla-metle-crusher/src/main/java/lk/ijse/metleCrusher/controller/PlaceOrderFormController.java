@@ -16,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.metleCrusher.bo.custom.CustomerBO;
+import lk.ijse.metleCrusher.bo.custom.impl.CustomerBoImpl;
 import lk.ijse.metleCrusher.db.DbConnection;
 import lk.ijse.metleCrusher.dto.CustomerDto;
 import lk.ijse.metleCrusher.dto.ItemDto;
@@ -96,7 +97,7 @@ public class PlaceOrderFormController {
 
     @FXML
     private Label lblNetTotal;
-
+    CustomerBO customerBO = new CustomerBoImpl();
     private CustomerModel customerModel = new CustomerModel();
     private ItemModel itemModel = new ItemModel();
     private OrderModel orderModel = new OrderModel();
@@ -148,7 +149,7 @@ public class PlaceOrderFormController {
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
-            List<CustomerDto> idList = customerModel.getAllCustomer();
+            List<CustomerDto> idList = customerBO.getAllCustomer();
 
             for (CustomerDto dto : idList) {
                 obList.add(dto.getId());
@@ -156,6 +157,8 @@ public class PlaceOrderFormController {
 
             cmbCustomerId.setItems(obList);
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
@@ -346,6 +349,7 @@ public class PlaceOrderFormController {
     @FXML
     void txtQtyOnAction(ActionEvent event) {
         btnAddToCartOnAction(event);
+
     }
 
     @FXML

@@ -27,18 +27,6 @@ public class CustomerDAOImpl implements CustomerDAO {
         return getAllCustomer;
     }
 
-//    public CustomerDto search(String id) throws SQLException {
-//        ResultSet rst = SQLUtil.execute("SELECT * FROM customer WHERE id = ?");
-//        rst.next();
-//
-//        return new CustomerDto(
-//                rst.getString(1),
-//                rst.getString(2),
-//                rst.getString(3),
-//                rst.getString(4)
-//        );
-//    }
-
     @Override
     public boolean save(CustomerDto dto) throws SQLException, ClassNotFoundException {
        return  SQLUtil.execute("INSERT INTO customer VALUES(?, ?, ?, ?)",
@@ -52,6 +40,13 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM customer WHERE id = ?",id);
+    }
+
+    @Override
+    public CustomerDto search(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM Customer WHERE id=?",id);
+        rst.next();
+        return new CustomerDto(id + "", rst.getString("name"), rst.getString("address"));
     }
 
 }

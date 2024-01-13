@@ -38,16 +38,16 @@ public class OrderModel {
         }
         return "O001";
     }
-    public static boolean saveOrder(String orderId, String customerId, LocalDate date) throws SQLException, ClassNotFoundException {
-        Connection connection = DbConnection.getInstance().getConnection();
-
-        String sql = "INSERT INTO orders VALUES(?, ?, ?)";
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setString(1, orderId);
-        pstm.setString(2, customerId);
-        pstm.setDate(3, Date.valueOf(date));
-
-        return pstm.executeUpdate() > 0;
-    }
+//    public static boolean saveOrder(String orderId, String customerId, LocalDate date) throws SQLException, ClassNotFoundException {
+//        Connection connection = DbConnection.getInstance().getConnection();
+//
+//        String sql = "INSERT INTO orders VALUES(?, ?, ?)";
+//        PreparedStatement pstm = connection.prepareStatement(sql);
+//        pstm.setString(1, orderId);
+//        pstm.setString(2, customerId);
+//        pstm.setDate(3, Date.valueOf(date));
+//
+//        return pstm.executeUpdate() > 0;
+//    }
 
 }

@@ -43,4 +43,11 @@ public class ItemDAOImpl implements ItemDAO {
     public boolean delete(String dto) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM item WHERE code = ?", dto);
     }
+
+    @Override
+    public ItemDto search(String code) throws SQLException, ClassNotFoundException {
+        ResultSet rst = SQLUtil.execute("SELECT * FROM Item WHERE code=?", code);
+        rst.next();
+        return new ItemDto(code + "", rst.getString("description"), rst.getBigDecimal("unitPrice"), rst.getInt("qtyOnHand"));
+    }
 }

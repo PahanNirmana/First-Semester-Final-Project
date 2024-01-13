@@ -32,27 +32,4 @@ public class CustomerModel {
         }
         return dto;
     }
-
-    public List<CustomerDto> getAllCustomer() throws SQLException {
-        Connection connection = DbConnection.getInstance().getConnection();
-
-        String sql = "SELECT * FROM customer";
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        ResultSet resultSet = pstm.executeQuery();
-
-        ArrayList<CustomerDto> dtoList = new ArrayList<>();
-
-        while(resultSet.next()) {
-            dtoList.add(
-                    new CustomerDto(
-                            resultSet.getString(1),
-                            resultSet.getString(2),
-                            resultSet.getString(3),
-                            resultSet.getString(4)
-                    )
-            );
-        }
-        return dtoList;
-    }
-
 }

@@ -10,6 +10,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.metleCrusher.bo.custom.CustomerBO;
+import lk.ijse.metleCrusher.bo.custom.EmployeeBO;
+import lk.ijse.metleCrusher.bo.custom.impl.CustomerBoImpl;
+import lk.ijse.metleCrusher.bo.custom.impl.EmployeeBoImpl;
 import lk.ijse.metleCrusher.dto.EmployeeDto;
 import lk.ijse.metleCrusher.dto.tm.EmployeeTm;
 import lk.ijse.metleCrusher.entity.EmployeeModel;
@@ -70,7 +74,7 @@ public class EmployeeFormController {
     @FXML
     private TableView<EmployeeTm> tblEmployee;
 
-
+    EmployeeBO employeeBO = new EmployeeBoImpl();
     private EmployeeModel empModel = new EmployeeModel();
 
     public void initialize() {
@@ -90,12 +94,12 @@ public class EmployeeFormController {
     }
 
     private void LoadAllEmployee() {
-        var model = new EmployeeModel();
+      //  var model = new EmployeeModel();
 
         ObservableList<EmployeeTm> obList = FXCollections.observableArrayList();
 
         try {
-            List<EmployeeDto> dtoList = model.getAllEmployee();
+            List<EmployeeDto> dtoList = employeeBO.getAllEmployee();
 
             for (EmployeeDto dto : dtoList) {
                 obList.add(
@@ -114,6 +118,8 @@ public class EmployeeFormController {
             tblEmployee.setItems(obList);
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -122,7 +128,7 @@ public class EmployeeFormController {
         String id = txtEmpId.getText();
 
         try {
-            EmployeeDto dto = empModel.searchEmployee(id);
+            EmployeeDto dto = employeeBO.searchEmployee(id);
             if (dto != null) {
                 setFields(dto);
             } else {
@@ -130,6 +136,8 @@ public class EmployeeFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -155,7 +163,7 @@ public class EmployeeFormController {
 
 //        var model = new employeeModel();
         try {
-            boolean isDeleted = empModel.deleteEmployee(id);
+            boolean isDeleted = employeeBO.deleteEmployee(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee Deleted!").show();
             } else {
@@ -163,6 +171,8 @@ public class EmployeeFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
 
@@ -211,7 +221,7 @@ public class EmployeeFormController {
         var dto = new EmployeeDto(id, nic, name, address, gander, tel, salary);
 
         try {
-            boolean isSaved = empModel.saveEmployee(dto);
+            boolean isSaved = employeeBO.saveEmployee(dto);
 
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee Saved!").show();
@@ -219,6 +229,8 @@ public class EmployeeFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -236,13 +248,15 @@ public class EmployeeFormController {
 
         //var model = new EmployeeModel();
         try {
-            boolean isUpdated = empModel.updateEmployee(dto);
+            boolean isUpdated = employeeBO.updateEmployee(dto);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Employee Updated ! :)").show();
                 clearFields();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -28,4 +28,9 @@ public class OrderDAOImpl implements OrderDAO {
     public boolean delete(String dto) throws SQLException, ClassNotFoundException {
         return false;
     }
+
+    @Override
+    public OrderDTO search(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
 }

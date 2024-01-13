@@ -10,4 +10,6 @@ public interface PlaceOrderBO {
     List<CustomerDto> getAllCustomer() throws SQLException, ClassNotFoundException;
 
     String generateNextOrderId();
+
+    CustomerDto searchCustomer(String id) throws SQLException, ClassNotFoundException;
 }

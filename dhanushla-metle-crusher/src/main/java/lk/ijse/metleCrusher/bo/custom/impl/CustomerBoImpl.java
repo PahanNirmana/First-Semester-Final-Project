@@ -27,4 +27,9 @@ public class CustomerBoImpl implements CustomerBO {
         return customerDAO.delete(id);
     }
 
+    @Override
+    public CustomerDto searchCustomer(String id) throws SQLException, ClassNotFoundException {
+        return customerDAO.search(id);
+    }
+
 }

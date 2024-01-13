@@ -14,11 +14,17 @@ public class PlaceOrderBoImpl implements PlaceOrderBO {
 
     @Override
     public List<CustomerDto> getAllCustomer() throws SQLException, ClassNotFoundException {
-        return null;
+        return customerDAO.getAll();
     }
 
     @Override
     public String generateNextOrderId() {
         return null;
     }
+    @Override
+    public CustomerDto searchCustomer(String id) throws SQLException, ClassNotFoundException {
+        return customerDAO.search(id);
+    }
+
+
 }

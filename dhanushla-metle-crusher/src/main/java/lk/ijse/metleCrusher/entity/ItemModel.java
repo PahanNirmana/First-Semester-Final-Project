@@ -23,18 +23,6 @@ public class ItemModel {
 
         return pstm.executeUpdate() > 0;
     }
-//    public boolean saveItem(ItemDto dto) throws SQLException {
-//        Connection connection = DbConnection.getInstance().getConnection();
-//        String sql = "INSERT INTO item VALUES(?, ?, ?, ?)";
-//        PreparedStatement pstm = connection.prepareStatement(sql);
-//
-//        pstm.setString(1, dto.getCode());
-//        pstm.setString(2, dto.getDescription());
-//        pstm.setDouble(3, dto.getUnitPrice());
-//        pstm.setInt(4, dto.getQtyOnHand());
-//
-//        return pstm.executeUpdate() > 0;
-//    }
 
     public List<ItemDto> loadAllItems() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
@@ -56,20 +44,6 @@ public class ItemModel {
 
         return itemList;
     }
-
-//    public boolean updateItem(ItemDto itemDto) throws SQLException {
-//        Connection connection = DbConnection.getInstance().getConnection();
-//
-//        String sql = "UPDATE item SET description = ?, unit_price = ?, qty_on_hand = ? WHERE code = ?";
-//        PreparedStatement pstm = connection.prepareStatement(sql);
-//
-//        pstm.setString(1, itemDto.getDescription());
-//        pstm.setDouble(2, itemDto.getUnitPrice());
-//        pstm.setInt(3, itemDto.getQtyOnHand());
-//        pstm.setString(4, itemDto.getCode());
-//
-//        return pstm.executeUpdate() > 0;
-//    }
 
     public ItemDto searchItem(String code) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
@@ -93,14 +67,4 @@ public class ItemModel {
         return dto;
     }
 
-//    public boolean deleteItem(String code) throws SQLException {
-//        Connection connection = DbConnection.getInstance().getConnection();
-//
-//        String sql = "DELETE FROM item WHERE code = ?";
-//        PreparedStatement pstm = connection.prepareStatement(sql);
-//
-//        pstm.setString(1, code);
-//
-//        return pstm.executeUpdate() > 0;
-//    }
 }

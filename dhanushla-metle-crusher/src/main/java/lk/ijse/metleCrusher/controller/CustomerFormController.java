@@ -85,24 +85,6 @@ public class CustomerFormController {
                         add(new CustomerTm(c.getId(),c.getName(),c.getAddress(),c.getTel()));
             }
 
-
-
-//            List<CustomerDto> dtoList = model.getAllCustomer();
-//
-//            for (CustomerDto dto : dtoList) {
-//                obList.add(
-//                        new CustomerTm(
-//                                dto.getId(),
-//                                dto.getName(),
-//                                dto.getAddress(),
-//                                dto.getTel()
-//                        )
-//                );
-//            }
-//
-//            tblCustomer.setItems(obList);
-
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
